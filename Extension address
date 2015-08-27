@@ -1,0 +1,101 @@
+# Reading-and-Writing-to-the-files
+//Miti Naik
+public class adress
+{
+private String Fname;
+private String Lname;
+   private String houseNum;
+   private String street;
+   private String city;
+   private String state;
+   private String county;
+   private String zip;
+  
+   
+   
+   public adress()
+   {
+      Fname = " ";
+      Lname = " ";
+      houseNum = " ";
+      street = " ";
+      city = " ";
+      state = " ";
+      county = " ";
+      zip = " ";
+    
+      
+   
+   
+   }
+   public adress( String Fn, String Ln, String N, String st, String C, String S, String c, String z)
+   {  
+      Fname = Fn;
+      Lname = Ln;
+      houseNum = N;
+      street = st;
+      city = C;
+      state = S;
+      county = c;
+      zip = z;
+            
+   
+   
+   
+   }
+   public void setfn(String Fn)
+   { Fname = Fn;}
+   public void setln(String Ln)
+   { Lname = Ln;}
+   public void setstreet( String St)
+   {street = St;}
+   public void setCity(String C)
+   { city = C;}
+   public void setState(String s)
+   { state = s;}
+   public void setcounty(String c)
+   { county = c;}
+   public void setzip(String z)
+   { zip = z;}
+   public void sethouseNum(String N)
+   { houseNum = N;}
+   
+   
+   public String getfn()
+   { return Fname;}
+   public String getln()
+   { return Lname;}
+   public String getstreet()
+   { return street;}
+   public String getCity()
+   { return city;}
+   public String getstate()
+   { return state;}
+   public String getcounty()
+   { return county;}
+   public String getzip()
+   { return zip;}
+   public String gethouseNum()
+   { return houseNum;}
+   
+   public String toString()
+   {
+   String str =( Fname + " "+ Lname +
+                  " \n" + houseNum + ", " + street + ", " + 
+                 city + "," + state + "," + county + ", " + zip);
+                 
+     return str;
+   }
+   
+
+
+
+
+
+
+
+
+
+
+
+}
