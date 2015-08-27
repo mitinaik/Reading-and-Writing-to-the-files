@@ -1,0 +1,133 @@
+# Reading-and-Writing-to-the-files
+//Miti Naik
+//august 10 2015
+
+import java.util.Scanner;
+import java.io.*;
+public class justademo
+{
+   public static void main(String[] args)
+   {
+     final int sethours = 40;
+     double hourlyrate;
+     final double overtimerate = 1.5, staterate = 0.07, fedrate = 0.03;
+     double overtimehours;
+     double hours , reghours , overhours , grosspay , statetax , fedtax ,netpay ;
+     int emp;
+     String Fname;
+     String Lname;
+     String houseNum;
+     String street;
+     String city;
+     String state;
+     String county;
+     String zip;
+     String filename = " ";
+     
+     String File;
+     
+     Scanner keyboard = new Scanner(System.in);
+     System.out.print(" Enter the name of the file:");
+     filename = keyboard.nextLine();
+         
+    try
+    {
+     File file = new File(filename);
+   Scanner inputfile = new Scanner(file);
+         
+     
+     
+     System.out.print(" Enter your first name: ");
+     Fname = keyboard.nextLine();
+     
+     System.out.print(" Enter the Last name: ");
+     Lname = keyboard.nextLine();
+     
+     System.out.print(" Enter your house number:");
+     houseNum = keyboard.nextLine();
+     
+     System.out.print(" Enter your street:");
+     street = keyboard.nextLine();
+     
+     System.out.print(" Enter your city:");
+     city = keyboard.nextLine();
+     
+     System.out.print(" Enter your state:");
+     state = keyboard.nextLine();
+     
+     System.out.print(" Enter your county:");
+     county = keyboard.nextLine();
+     
+     System.out.print(" Enter your zip:");
+     zip = keyboard.nextLine();
+   
+     
+     System.out.print(" Enter the hourly rate for the position $: ");
+     hourlyrate = keyboard.nextDouble();
+     
+     System.out.print(" Enter the overtime hours: ");
+     overtimehours = keyboard.nextDouble();
+     if(overtimehours <0)
+     {
+      System.out.print(" invalid " );
+      System.out.println(" Enter the overtime hours :");
+      overtimehours = keyboard.nextDouble();
+      
+     }
+     hours = sethours + overtimehours;
+     reghours = sethours * hourlyrate;
+     overhours = overtimehours * overtimerate * hourlyrate;
+     grosspay = reghours + overhours;
+     statetax = grosspay * staterate;
+     fedtax =  grosspay * fedrate;
+     netpay = grosspay -( statetax + fedtax); 
+
+     while(inputfile == null)
+     {
+      netpay = inputfile.nextDouble();
+
+      }
+              
+
+     
+      adress ad = new adress(Fname, Lname, houseNum, street, city, state, county, zip);
+   String I=  "" +ad.toString()+ 
+                        " \n The total hours is " + hours +"\n"+
+   
+                         
+                        " The reg hours with pay is $ " + reghours +"\n"+
+                        
+                        " The over hours with pay is $ " + overhours +"\n"+
+                        
+                        " The gross pay is $:" + grosspay +"\n"+
+                        
+                         " The state tax with the gross pay is $  " + statetax +"\n"+
+                        
+                        " the fedral tax with the grosspay is $"+ fedtax +"\n"+
+                        
+                        " The net pay is including all the taxes $ " + netpay;
+
+     
+     
+              
+          FileWriter fwriter = new FileWriter(filename);
+  PrintWriter outputFile = new PrintWriter(fwriter);
+  
+  outputFile.print(I);
+  outputFile.close();
+
+             
+                           
+                         
+         
+       inputfile.close();
+
+
+   
+   }
+      
+      catch( Exception e)
+      {System.out.println(e.getMessage());}
+     
+   }
+}
